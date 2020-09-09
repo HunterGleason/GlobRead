@@ -52,7 +52,7 @@ get_glob_TS<-function(dataset,var_name,station_name,scaled_path)
 #' @param dataset One of ERA5, JRA55 or MERRA2 specifying which reanalysis to use.
 #' @return A vector of GlobSim climate varible names specific to a given reanalysis dataset.
 #' @export
-get_var_names<-function(dataset)
+get_var_names<-function(dataset,scaled_path)
 {
   if(dataset == 'ERA5'){
     reanalysis <-ncdf4::nc_open(paste(scaled_path,"scaled_era5_1.0h.nc",sep=""))
@@ -72,7 +72,7 @@ get_var_names<-function(dataset)
 #' @param dataset One of ERA5, JRA55 or MERRA2 specifying which reanalysis to use, in this case results should be the same.
 #' @return A vector of GlobSim station 'site' names specific to a given reanalysis dataset.
 #' @export
-station_names<-function(dataset)
+station_names<-function(dataset,scaled_path)
 {
   if(dataset == 'ERA5'){
     reanalysis <-ncdf4::nc_open(paste(scaled_path,"scaled_era5_1.0h.nc",sep=""))
