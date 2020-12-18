@@ -4,10 +4,14 @@
 \alias{get_var_names}
 \title{Function for returning the variable names within a specified reanalysis dataset.}
 \usage{
-get_var_names(dataset)
+get_var_names(dataset, scaled_path, time_step)
 }
 \arguments{
-\item{dataset}{One of ERA5, JRA55 or MERRA2 specifying which reanalysis to use.}
+\item{dataset}{String. One of ERA5, JRA55 or MERRA2 specifying which reanalysis to use.}
+
+\item{scaled_path}{String. Path to the directory with the \code{scaled} output from GlobSim.}
+
+\item{time_step}{Float. The time step (in hours) used for interpolation and scaling of GlobSim time series.}
 }
 \value{
 A vector of GlobSim climate varible names specific to a given reanalysis dataset.

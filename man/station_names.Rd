@@ -4,10 +4,14 @@
 \alias{station_names}
 \title{Simple function to print station names form within specified dataset, should be same for all datasets}
 \usage{
-station_names(dataset)
+station_names(dataset, scaled_path, time_step)
 }
 \arguments{
 \item{dataset}{One of ERA5, JRA55 or MERRA2 specifying which reanalysis to use, in this case results should be the same.}
+
+\item{scaled_path}{String. Path to the directory with the \code{scaled} output from GlobSim.}
+
+\item{time_step}{Float. The time step (in hours) used for interpolation and scaling of GlobSim time series.}
 }
 \value{
 A vector of GlobSim station 'site' names specific to a given reanalysis dataset.
